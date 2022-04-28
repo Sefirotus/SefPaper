@@ -41,6 +41,7 @@ class Post(models.Model):
     text = models.TextField()
     rating = models.SmallIntegerField(default=0)
 
+
     def like(self):
         self.rating += 1
         self.save()
@@ -49,11 +50,11 @@ class Post(models.Model):
         self.rating -= 1
         self.save()
 
-    def prewiew(self):
-        return '{} ... {}'.format(self.text[0:123], str(self.text))
-
     def __str__(self):
-        return f'{self.author.title()}: {self.text[:20]}'
+        return  f'{self.title}: {self.text[:4]}'
+
+
+
 
 class PostCategory(models.Model):
     postThrough = models.ForeignKey(Post, on_delete=models.CASCADE)
