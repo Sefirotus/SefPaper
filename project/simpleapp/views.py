@@ -28,7 +28,7 @@ class ProductsList(ListView):
         context = super().get_context_data(**kwargs)
         # К словарю добавим текущую дату в ключ 'time_now'.
         context['time_now'] = datetime.utcnow()
-        context['quanity'] = id(Post)
+      #  context['quanity'] = round(Post)
         # Добавим ещё одну пустую переменную,
         # чтобы на её примере рассмотреть работу ещё одного фильтра.
         pprint(context)

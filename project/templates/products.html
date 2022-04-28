@@ -3,11 +3,12 @@
 {% load custom_filters %}
 
 {% block title %}
-Products news|length
+ProductsList|length
 {% endblock title %}
+ProductsList
 
 {% block content %}
-   <h1>Все посты {{ quanity }}</h1>
+   <h1>Все посты: {{ products|length }} </h1>
    <h3>{{ time_now|date:'M d Y' }}</h3>
    <h3>{{ quansity }}</h3>
    <hr>
@@ -21,12 +22,12 @@ Products news|length
 
            {% for product in products %}
            <tr>
-               <td>{{ product.title }}</td>
+               <td>{{ product.title|censor }}</td>
                 <!-- Добавим специальный фильтр truncatechars,
                 чтобы ограничить количество символов до 15.
                 Все остальные символы превратятся в многоточие. -->
                <td>{{ product.daterimePost }}</td>
-               <td>{{ product.text|truncatechars:5 }}</td>
+               <td>{{ product.text|truncatechars:5|censor }}</td>
            </tr>
            {% endfor %}
 
