@@ -27,7 +27,7 @@ ProductsList
                 чтобы ограничить количество символов до 15.
                 Все остальные символы превратятся в многоточие. -->
                <td>{{ product.daterimePost }}</td>
-               <td>{{ product.text|truncatechars:5|censor }}</td>
+               <td>{{ product.text|truncatechars:20|censor }}</td>
            </tr>
            {% endfor %}
 
